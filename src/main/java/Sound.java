@@ -44,7 +44,7 @@ public class Sound
       numLeadZeros++;
       i++;
     }
-    int [] newSamples = bew int [samples.length - numLeadZeros];
+    int [] newSamples = new int [samples.length - numLeadZeros];
     int j = 0;
     for(int i = numLeadZeros; i<samples.length;i++){
       newSamples[j] = samples[i];
