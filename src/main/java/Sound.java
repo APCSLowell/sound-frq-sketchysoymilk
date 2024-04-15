@@ -15,18 +15,23 @@ public class Sound
    */
   public int limitAmplitude(int limit)
   {  
-    int sum = 0;
-    for(int i =0; i<samples.length;i++){
-      if(samples[i] < -limit){
-        samples[i] = -limit;
-        sum++;
-      }
-      else if(samples[i] > limit){
-        samples[i] = limit;
-        sum++;
-      }
+    int numChanges = 0;
+
+    for (int i = 0; i < samples.length; i++)
+    {
+        if (samples[i] > limit)
+        {
+            samples[i] = limit;
+            numChanges++;
+        }
+        else if (samples[i] < -limit)
+        {
+            samples[i] = -limit;
+            numChanges++;
+        }
     }
-    return sum;
+
+    return numChanges;
   }
 
 
